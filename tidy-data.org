@@ -33,9 +33,16 @@ unhappy in its own way."  -- Leo Tolstoy
 - Promote use of standard data analysis tools (numpy, R, ..)
 - Make data easily human- _and_ machine-readable
 
-* "Tidy data" - example
+* "Tidy data" - the rules
 
-Messy version:
+- Each variable is a *column*
+- Each observation is a *row*
+- Each observational unit is a *table*
+
+
+* "Tidy data" - an example
+
+A "messy" table:
 
 |      | treatment_a | treatment_b |
 |------+-------------+-------------|
@@ -43,6 +50,12 @@ Messy version:
 | Jane |          12 |           5 |
 | Mary |           9 |          23 |
 
+(very common data presentation format!)
+
+In what ways does this table break the rules of tidy data?
+
+
+* "Tidy data" - an example (continued)
 
 Tidy version:
 
@@ -54,24 +67,6 @@ Tidy version:
 | Jane   | b         |      5 |
 | Mary   | a         |      9 |
 | Mary   | b         |     23 |
-
-* "Tidy data" - the rules
-
-- Each variable is a *column*
-- Each observation is a *row*
-- Each observational unit is a *table*
-
-
-Look at the messy table again:
-
-
-|      | treatment_a | treatment_b |
-|------+-------------+-------------|
-| John |           - |          19 |
-| Jane |          12 |           5 |
-| Mary |           9 |          23 |
-
-In what ways does this table break the rules of tidy data?
 
 
 * "Tidy data" - common problems
