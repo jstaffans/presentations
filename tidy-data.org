@@ -136,10 +136,14 @@ In what ways does this table break the rules of tidy data?
 
 ** "Melting"
 
+  Messy:
+
   | Row | a | b | c |
   |-----+---+---+---|
   | A   | 1 | 2 | 3 |
   | B   | 4 | 5 | 6 |
+
+  Tidy:
  
   | Row | column | value |
   |-----+--------+-------|
@@ -165,8 +169,7 @@ In what ways does this table break the rules of tidy data?
 
 * Bonus: csvsql
   
-~cat exhibitions.csv \
-   | csvsql --query "SELECT COUNT(*) FROM stdin WHERE location LIKE 'Paris%"~
+~cat exhibitions.csv | csvsql --query "SELECT COUNT(*) FROM stdin WHERE location LIKE 'Paris%"~
 
 - use SQL on your CSV data
 - works great with tidy data sets!
