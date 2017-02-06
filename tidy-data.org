@@ -1,0 +1,174 @@
+#+Title: Tidy Data
+
+Hadley Wickham
+
+Journal of Statistical Software
+August 2014, Volume 59, Issue 10.
+
+* The problem
+
+"80 % of data analysis is spent cleaning and preparing the data"
+
+  - Parsing
+  - Missing values
+  - Outliers
+  - ...
+
+* Data tidying
+
+Structuring data sets to facilitate further processing or sharing.
+
+Data set examples:
+
+  - Log data
+  - OCR extracts
+  - JSON responses
+
+* "Tidy data"
+
+"Happy families are all alike; every unhappy family is 
+unhappy in its own way."  -- Leo Tolstoy
+
+- A standard (instead of ad-hoc) way of tidying data
+- Promote use of standard data analysis tools (numpy, R, ..)
+- Make data easily human- _and_ machine-readable
+
+* "Tidy data" - example
+
+Messy version:
+
+|      | treatment_a | treatment_b |
+|------+-------------+-------------|
+| John |           - |          19 |
+| Jane |          12 |           5 |
+| Mary |           9 |          23 |
+
+
+Tidy version:
+
+| person | treatment | result |
+|--------+-----------+--------|
+| John   | a         |      - |
+| John   | b         |     19 |
+| Jane   | a         |     12 |
+| Jane   | b         |      5 |
+| Mary   | a         |      9 |
+| Mary   | b         |     23 |
+
+* "Tidy data" - the rules
+
+- Each variable is a *column*
+- Each observation is a *row*
+- Each observational unit is a *table*
+
+
+Look at the messy table again:
+
+
+|      | treatment_a | treatment_b |
+|------+-------------+-------------|
+| John |           - |          19 |
+| Jane |          12 |           5 |
+| Mary |           9 |          23 |
+
+In what ways does this table break the rules of tidy data?
+
+
+* "Tidy data" - common problems
+
+** _Column headers are values, not variable names_
+
+  - e.g. 'treatment_a' is a value of the 'treatment' variable
+   
+
+** _Multiple variables are stored in one column_
+
+  Messy:
+
+  | name | group  |
+  |------+--------|
+  | John | m25-44 |
+  | ...  |        |
+
+  Tidy:
+
+  | name | gender | age_group |
+  |------+--------+-----------|
+  | John | male   |     25-44 |
+  | ...  |        |           |
+  
+
+** _Variables are stored in both rows and columns_
+
+  - possibly the messiest of them all
+  
+  Messy:
+
+  | sensor | element | year | month | d0 |   d1 |   d2 | ... |
+  |--------+---------+------+-------+----+------+------+-----|
+  | MX1    | tmax    | 2016 |    11 | -  | 25.4 | 26.5 | -   |
+  | MX1    | tmin    | 2016 |    11 | -  | 16.5 | 17.8 | -   |
+  | ...    |         |      |       |    |      |      |     |
+
+  Tidy:
+
+  | sensor |       date | tmax | tmin |
+  | MX1    | 2016-11-01 | 25.4 | 16.5 |
+  | MX1    | 2016-11-02 | 26.5 | 17.8 |
+  | ...    |            |      |      |
+
+
+* "Tidy data" - common problems (continued)
+
+** Multiple observational types in one table
+
+  - Close-to-home example: having artwork and artist data in one table
+  - Normalization useful for tidying, but de-normalization is often
+    necessary for analysis (b/c tools lack support for relations)
+
+
+** One type spread out over multiple tables
+  
+  - E.g. one table per year of data
+  
+
+* "Tidy data" - strategies for tidying data
+
+** "Melting"
+
+  | Row | a | b | c |
+  |-----+---+---+---|
+  | A   | 1 | 2 | 3 |
+  | B   | 4 | 5 | 6 |
+ 
+  | Row | column | value |
+  |-----+--------+-------|
+  | A   | a      |     1 |
+  | A   | b      |     2 |
+  | A   | c      |     3 |
+  | B   | a      |     4 |
+  | B   | b      |     5 |
+  | B   | c      |     6 |
+  
+
+** String splitting 
+
+  - E.g. for extracting individual variables from one column 
+    ('m24' => 'male', 24)
+  
+
+** "Casting" 
+  
+  - inverse of melt operation (e.g. rotate tmax and tmin back into columns)
+   
+
+
+* Bonus: csvsql
+  
+~cat exhibitions.csv \
+   | csvsql --query "SELECT COUNT(*) FROM stdin WHERE location LIKE 'Paris%"~
+
+- use SQL on your CSV data
+- works great with tidy data sets!
+- http://harelba.github.io/q/
+
