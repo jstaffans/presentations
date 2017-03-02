@@ -2,11 +2,11 @@
 
 * Bret Victor on interactive programming
 
-** What is the ideal environment for ideas to grow?
+ - What is the ideal environment for ideas to grow?
 
-** Creators need an immediate connection to what they are creating
+ - Creators need an immediate connection to what they are creating
 
-** https://vimeo.com/36579366#t=220
+ - https://vimeo.com/36579366#t=220
 
 
 
@@ -18,15 +18,15 @@
 
 ** LISP 
 
-*** 1 + 1                    ->  (+ 1 1)
+   ~1 + 1                    ->  (+ 1 1)~
 
-*** print("Hello!")          ->  (print "Hello!")
+   ~print("Hello!")          ->  (print "Hello!")~
 
-*** [1,2,3].map((x) => {     ->  (map inc [1 2 3])
-***   return x + 1;
-*** })
+   ~[1,2,3].map((x) => {     ->  (map inc [1 2 3])~
+     ~return x + 1;~ 
+   ~})~
 
-** Interactive -- close to Bret Victor's demo!
+** *Interactive* -- close to Bret Victor's demo!
 
 
 
@@ -40,24 +40,24 @@
 
 ** Dynamically typed 
 
-*** Has a powerful specification library in clojure.spec: 
- https://clojure.org/about/spec
+   * Has a powerful specification library in clojure.spec: 
+     https://clojure.org/about/spec
 
 ** Immutable data structures 
 
-*** Append item to vector:
+   * Append item to vector:
 
-***   (conj [1 2 3] 4)  ;; [1 2 3 4]
+     ~(conj [1 2 3] 4)~     
 
-***   -> Produces a _new_ vector
-***   -> Uses structural sharing to make it _fast_
-***   -> Great fit for React, redux pattern
+     -> Produces a _new_ vector ~[1 2 3 4]~
+     -> Uses structural sharing to make it _fast_
+     -> Great fit for React, redux pattern
 
 ** CSP through core.async library
 
-*** "Communicating Sequential Processes"
-*** Similar to Go, django-channels
-*** Solution to "callback hell"
+   * "Communicating Sequential Processes"
+   * Similar to Go, django-channels
+   * Solution to "callback hell"
 
 
 
@@ -65,11 +65,11 @@
 
 ** Clojure for the backend is a harder sell
 
-*** JVM is unfamiliar
+   * JVM is unfamiliar
 
-*** No monolithic framework like Rails, Django
+   * No monolithic framework like Rails, Django
 
-*** Other choices not as broken as JavaScript 
+   * Other choices not as broken as JavaScript 
 
 
 
