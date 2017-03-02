@@ -63,7 +63,7 @@
 
 * ClojureScript totally rocks the frontend!
 
-** Clojure for the backend is a harder sell
+** Clojure for the backend?
 
    * JVM is unfamiliar
 
