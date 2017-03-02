@@ -2,5 +2,6 @@ Presentations
 =============
 
 * [Tidy data](https://github.com/jstaffans/presentations/blob/master/tidy-data.org): A summary of the paper with the same name by Hadley Wickham
+* [Django + ClojureScript = ❤](https://github.com/jstaffans/presentations/blob/master/django-cljs.org): Making the case for using Django and ClojureScript
 
 
