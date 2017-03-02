@@ -30,7 +30,7 @@
 
 
 
-* ClojureScript: technical overview
+* ClojureScript: technical highlights
   
 ** Designed for hosting: easy inter-op with JavaScript
 
