@@ -9,7 +9,6 @@
  - https://vimeo.com/36579366#t=220
 
 
-
 * ClojureScript
 
 ** Clojure dialect that compiles to JavaScript
@@ -26,7 +25,10 @@
      ~return x + 1;~ 
    ~})~
 
-** *Interactive* -- close to Bret Victor's demo!
+** _Interactive_
+
+   * In the same vein as Bret Victor's demo
+   * Much better than similar efforts for React, Angular 
 
 
 
@@ -38,10 +40,7 @@
 
 ** Rich standard library
 
-** Dynamically typed 
-
-   * Has a powerful specification library in clojure.spec: 
-     https://clojure.org/about/spec
+** Dynamically typed (has runtime contracts though)
 
 ** Immutable data structures 
 
@@ -81,4 +80,11 @@
 
 ** https://github.com/jstaffans/django-cljs-loader
 
+ Short demo ...
+
+* Final words
+
+ Space ships to Mars will use LISP, so better learn it now!
+
+ https://goo.gl/bPSAaH
 
