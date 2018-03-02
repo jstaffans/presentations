@@ -1,0 +1,83 @@
+#+Title: ClojureScript
+
+* What is ClojureScript?
+  
+** Clojure dialect that compiles to JavaScript
+   * Clojure 1.0 released 2009
+   * ClojureScript alpha 2011
+   * Developed in lock-step 
+
+** Functional
+   * first-class functions
+   * mutable state is avoided
+   * recursion instead of looping
+   * (impure - _most_ parts of a program should be functional)
+     
+** Lisp
+   
+   * regular syntax consisting of s-expressions (lists)
+   * enables macro programming, editor tooling
+
+   _JS:_                         _CLJS:_  
+   
+   *1 + 2*                       *(+ 1 2)*
+
+   *print("Hello!")*             *(print "Hello!")*
+
+   *[1,2,3].map((x) => {*        *(map inc [1 2 3])*
+     *return x + 1;*
+   *})*
+
+** Dynamically typed
+
+* ClojureScript: technical highlights
+  
+** Designed for hosting: easy inter-op with JavaScript
+
+** Uses Google Closure compiler
+   * powerful JS optimizer
+   * reputation for being hard to use (Java app)
+   * get it for free using ClojureScript
+
+** Rich standard library
+   * no need for e.g. lodash
+
+** Immutable data structures 
+
+   * Append item to vector:
+
+     *(conj [1 2 3] 4)*
+
+     -> Produces a _new_ vector *[1 2 3 4]*
+     -> Uses structural sharing to make it _fast_
+
+* Tooling
+
+** Great editor support for s-expressions
+
+** One build tool (Leiningen), no need to mess with Webpack, Rollup, NPM, ...
+
+* Demo
+  
+* Why ClojureScript?
+
+** Stable syntax 
+** Simple tooling
+** Expressive
+** Fun!
+   
+** Really sweet if already using Clojure on backend (code re-use)
+
+* Why not ClojureScript?
+  
+** JVM is a turn-off
+** Not doing a single-page app
+** Powerful tools can be dangerous
+
+* Bret Victor on interactive programming
+
+ - What is the ideal environment for ideas to grow?
+
+ - Creators need an immediate connection to what they are creating
+
+ - https://vimeo.com/36579366#t=220
